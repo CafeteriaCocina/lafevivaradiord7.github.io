@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redes Sociales</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#FFA447">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <style>
+    body {
+      background-image: url('imagen/fondo.png');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .transition-all {
+      transition: all 0.3s ease;
+    }
+
+    .hover\:scale-110:hover {
+      transform: scale(1.1);
+    }
+
+    .hover\:brightness-110:hover {
+      filter: brightness(1.1);
+    }
+
+    .btn-effect:hover {
+      transform: scale(1.1);
+      filter: brightness(1.2);
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .animate-marquee {
+      animation: marquee 140s linear infinite;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      top: 0;
+      left: 0;
+    }
+
+    /* Icono flotante al final de la página */
+    .scroll-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #FFA447;
+      border-radius: 50%;  /* Forma circular */
+      padding: 25px;  /* Asegurarse de que el botón sea circular */
+      width: 70px;    /* Asegura que el ancho sea lo suficientemente grande */
+      height: 70px;   /* Asegura que la altura sea lo suficientemente grande */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .scroll-to-top:hover {
+      transform: scale(1.1);
+    }
+
+    .scroll-to-top i {
+      font-size: 30px;  /* Tamaño más grande del ícono */
+    }
+  </style>
+</head>
+<body class="text-white flex flex-col items-center justify-center min-h-screen relative overflow-x-hidden">
+
+  <div id="particles-js"></div> <!-- Partículas de fondo -->
+
+  <!-- Botón de menú -->
+  <div class="absolute top-4 right-4 z-50">
+    <button id="menuBtn" class="text-white text-2xl focus:outline-none hover:scale-110 transition-all">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Botón de compartir en la parte superior izquierda -->
+  <div class="absolute top-4 left-4 z-30">
+    <button id="shareBtn" class="w-16 h-16 bg-blue-500 hover:bg-blue-600 text-white rounded-full shadow-lg text-2xl flex items-center justify-center focus:outline-none transition-all">
+      <i class="fas fa-share-alt"></i>
+    </button>
+  </div>
+
+  <!-- Panel de menú lateral -->
+  <div id="menuPanel" class="fixed top-0 left-0 h-full w-64 bg-gray-800 text-white transform -translate-x-full transition-transform duration-300 z-40 shadow-lg p-6 space-y-4">
+    <h2 class="text-xl font-semibold mb-4">Redes Sociales</h2>
+    <a href="https://www.facebook.com/RadioGenApCristiana" target="_blank" class="flex items-center space-x-2 text-white bg-[#1877F2] hover:bg-[#145dbf] px-4 py-2 rounded btn-effect">
+      <i class="fab fa-facebook"></i><span>Facebook</span>
+    </a>
+    <a href="https://x.com/RadioTvGenAp" target="_blank" class="flex items-center space-x-2 text-white bg-[#1DA1F2] hover:bg-[#0d8ddb] px-4 py-2 rounded btn-effect">
+      <i class="fab fa-twitter"></i><span>Twitter</span>
+    </a>
+    <a href="https://www.instagram.com/radiogenapcristiana" target="_blank" class="flex items-center space-x-2 text-white bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:brightness-110 px-4 py-2 rounded btn-effect">
+      <i class="fab fa-instagram"></i><span>Instagram</span>
+    </a>
+    <a href="https://www.youtube.com/luisbuenotv" target="_blank" class="flex items-center space-x-2 text-white bg-[#FF0000] hover:bg-[#cc0000] px-4 py-2 rounded btn-effect">
+      <i class="fab fa-youtube"></i><span>YouTube</span>
+    </a>
+    <a href="https://www.tiktok.com/@radiogenapcristiana" target="_blank" class="flex items-center space-x-2 text-white bg-[#000000] hover:bg-[#1c1c1c] px-4 py-2 rounded btn-effect">
+      <i class="fab fa-tiktok"></i><span>TikTok</span>
+    </a>
+    <a href="https://paypal.me/cantanteluisbueno?country.x=MX&locale.x=es_XC" target="_blank" class="flex items-center space-x-2 text-white bg-[#0070ba] hover:bg-[#005ea6] px-4 py-2 rounded btn-effect">
+      <i class="fab fa-paypal"></i><span>PAYPAL</span>
+    </a>
+    <a href="https://vaughn.live/radiogenap" target="_blank" class="flex items-center space-x-2 text-white bg-[#FF0000] hover:bg-[#cc0000] px-4 py-2 rounded btn-effect">
+      <i class="fas fa-tv"></i><span>TV En Vivo</span>
+    </a>
+  </div>
+
+  <!-- Sección de Programación -->
+  <section class="mt-10 w-full px-6 py-8 bg-gray-800 bg-opacity-70 rounded-lg">
+    <h2 class="text-3xl font-bold text-center mb-6">Programación</h2>
+    <div class="space-y-4">
+      <div class="flex justify-between items-center bg-gray-700 p-4 rounded-lg">
+        <span class="text-lg">08:00 AM - Devocional</span>
+        <a href="detalles-devocional.html" class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600">Ver Más</a>
+      </div>
+      <div class="flex justify-between items-center bg-gray-700 p-4 rounded-lg">
+        <span class="text-lg">10:00 AM - Alabanza y Adoración</span>
+        <a href="detalles-alabanza.html" class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600">Ver Más</a>
+      </div>
+      <div class="flex justify-between items-center bg-gray-700 p-4 rounded-lg">
+        <span class="text-lg">12:00 PM - Charla Cristiana</span>
+        <a href="detalles-charla.html" class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600">Ver Más</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Icono para regresar al inicio -->
+  <div class="scroll-to-top" onclick="window.location.href = 'index.html';">
+    <i class="fas fa-arrow-up text-white"></i>
+  </div>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const menuPanel = document.getElementById('menuPanel');
+    const shareBtn = document.getElementById('shareBtn');
+
+    // Toggle del menú lateral
+    menuBtn.addEventListener('click', () => {
+      menuPanel.classList.toggle('-translate-x-full');
+      menuPanel.classList.toggle('translate-x-0');
+    });
+
+    // Funcionalidad del botón de compartir
+    shareBtn.addEventListener('click', () => {
+      if (navigator.share) {
+        navigator.share({
+          title: 'Escucha nuestra Radio',
+          text: '¡Escucha nuestra radio en vivo y comparte con tus amigos!',
+          url: window.location.href
+        }).catch(console.error);
+      } else {
+        alert('Funcionalidad de compartir no soportada');
+      }
+    });
+
+    // Configuración de las partículas
+    particlesJS('particles-js', {
+      "particles": {
+        "number": {
+          "value": 100,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#ffffff"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#ffffff"
+          }
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": true,
+          "anim": {
+            "enable": true,
+            "speed": 1,
+            "opacity_min": 0
+          }
+        },
+        "size": {
+          "value": 3,
+          "random": true,
+          "anim": {
+            "enable": true,
+            "speed": 4,
+            "size_min": 0.3
+          }
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#ffffff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 3,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "repulse"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+</body>
+</html>
